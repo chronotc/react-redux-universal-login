@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, ToastMessage } from 'react-toastr';
 import { signoutUser } from '../../actions/auth';
 import * as actions from '../../actions/forgot';
-import { Button } from '@auth0/styleguide-react-components';
+// import { Button } from '@auth0/styleguide-react-components';
 import * as EmailValidator from 'email-validator';
 
 const ToastMessageFactory = React.createFactory(ToastMessage.animation);
@@ -58,7 +58,7 @@ class ForgotPassword extends Component {
         </div>
       )
     }
-    return <Button type="submit" className="btn btn-success btn-sm">Submit</Button>;
+    return <button type="submit" className="btn btn-success btn-sm">Submit</button>;
   }
 
   getCancelButton() {
