@@ -8,7 +8,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducers from "./reducers";
 
-import './index.css';
 import App from './App';
 import Signin from './components/auth/Signin';
 import Home from './components/home/Home';
