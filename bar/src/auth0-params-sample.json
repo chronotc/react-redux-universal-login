@@ -1,6 +1,6 @@
 {
-  "domain": "mytenant.auth0.com",
-  "clientId": "zalZ1MTxxxxxxxxx13Z5xfZga",
+  "domain": "silla.auth0.com",
+  "clientId": "ugHGhlmc6cqOJ82csA2PL8TqdAAIP4Bx",
   "callbackUrl": "http://localhost:3000/callback",
   "realm": "Username-Password-Authentication",
   "apiUrl": "http://localhost:3001",
