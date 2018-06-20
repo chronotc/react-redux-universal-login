@@ -1,9 +1,0 @@
-{
-  "domain": "silla.auth0.com",
-  "clientId": "wKwVVrvwBt4hM207SJ21PCAaOJkVn7kl",
-  "callbackUrl": "http://localhost:3000/callback",
-  "realm": "Username-Password-Authentication",
-  "apiUrl": "http://localhost:3001",
-  "apiAudience": "https://myapi.com/api",
-  "scope": "openid email update:password"
-}
