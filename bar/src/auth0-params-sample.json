@@ -1,0 +1,9 @@
+{
+  "domain": "mytenant.auth0.com",
+  "clientId": "zalZ1MTxxxxxxxxx13Z5xfZga",
+  "callbackUrl": "http://localhost:3000/callback",
+  "realm": "Username-Password-Authentication",
+  "apiUrl": "http://localhost:3001",
+  "apiAudience": "https://myapi.com/api",
+  "scope": "openid email update:password"
+}
