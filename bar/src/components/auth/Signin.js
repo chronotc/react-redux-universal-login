@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import * as actions from '../../actions/auth';
-import * as EmailValidator from 'email-validator';
 import PropTypes from 'prop-types';
 
 class Signin extends Component {
@@ -32,13 +29,7 @@ class Signin extends Component {
         </div>
       )
     }
-    return <button type="submit" className="btn btn-success btn-sm">Submit</button>;
-  }
-
-  getForgotButton() {
-    if (!this.props.loading) {
-      return <Link to="/forgot" className="btn btn-primary btn-sm">Forgot Password</Link>;
-    }
+    return <button type="submit" className="btn btn-success btn-sm">Sign in</button>;
   }
 
   render() {
@@ -56,7 +47,6 @@ class Signin extends Component {
             <span className="col-xs-3"></span>
             <div className="col-sm-6">
               {this.getSigninButton()}
-              {this.getForgotButton()}
             </div>
           </div>
        </form>

@@ -20,7 +20,6 @@ class Callback extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    this.props.signoutUser();
     const that = this;
     if (/access_token|id_token|error/.test(nextProps.location.hash)) {
       this.props.handleAuthentication((err, result) => {
@@ -39,7 +38,6 @@ class Callback extends Component {
         <div></div>
       )
   }
-
 }
 
 function mapStateToProps(state) {

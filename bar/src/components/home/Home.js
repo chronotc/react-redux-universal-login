@@ -39,7 +39,6 @@ class Home extends Component {
         <div className="form-group">
           <span className="col-xs-3"></span>
           <div className="col-sm-9">
-          <Link to="/password" className="btn btn-primary btn-sm">Change Password</Link>
           <Link to="/" className="btn btn-warning btn-sm">Logout</Link>
           </div>
         </div>

@@ -11,10 +11,8 @@ import reducers from "./reducers";
 import App from './App';
 import Signin from './components/auth/Signin';
 import Home from './components/home/Home';
-import ForgotPassword from './components/forgot/ForgotPassword';
 import Callback from './components/callback/Callback';
 import RequireAuth from './components/auth/requireAuth';
-import ChangePassword from './components/password/ChangePassword';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -28,10 +26,8 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route exact path='/' component={Signin}/>
-          <Route exact path='/forgot' component={ForgotPassword}/>
           <Route exact path='/callback' component={Callback}/>
           <Route exact path='/home' component={RequireAuth(Home)}/>
-          <Route exact path='/password' component={RequireAuth(ChangePassword)}/>
         </Switch>
       </App>
     </BrowserRouter>

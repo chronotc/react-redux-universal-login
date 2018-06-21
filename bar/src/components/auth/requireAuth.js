@@ -13,6 +13,10 @@ export default function(ComposedComponent) {
     }
 
     componentWillMount() {
+      if (this.props.authenticated) {
+        return this.setState({ loading: false });
+      }
+
       this.props.checkUserSession((err, result) => {
         this.setState({ loading: false })
         if (err) {

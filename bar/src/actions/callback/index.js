@@ -6,11 +6,8 @@ import {
 
 import {
   CALLBACK_IN_PROGRESS,
-  CALLBACK_COMPLETE,
   CLEARDOWN
 } from './callbackTypes';
-
-import params from './../../auth0-params.json';
 
 import Auth from '../auth/Auth';
 
@@ -38,7 +35,6 @@ export function handleAuthentication(callback) {
     auth.handleAuthentication()
       .then(() => {
         dispatch({ type: AUTH_USER });
-        { type: CALLBACK_COMPLETE };
         return callback();
       })
       .catch(err => {

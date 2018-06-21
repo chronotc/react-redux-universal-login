@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
 
-class Footer extends Component {
+class Header extends Component {
 
   render() {
     if (this.props.authenticated) {
@@ -28,4 +27,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(Footer);
+export default connect(mapStateToProps, null)(Header);

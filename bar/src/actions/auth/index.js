@@ -6,8 +6,6 @@ import {
   CLEARDOWN
 } from './authTypes';
 
-import params from './../../auth0-params.json';
-
 import Auth from './Auth';
 
 const auth = new Auth();
