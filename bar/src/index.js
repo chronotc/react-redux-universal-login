@@ -27,12 +27,12 @@ ReactDOM.render(
     <BrowserRouter>
       <App>
         <Switch>
-        <Route exact path='/' component={Signin}/>
-        <Route exact path='/forgot' component={ForgotPassword}/>
-        <Route exact path='/callback' component={Callback}/>
-        <Route exact path='/home' component={RequireAuth(Home)}/>
-        <Route exact path='/password' component={RequireAuth(ChangePassword)}/>
-      </Switch>
+          <Route exact path='/' component={Signin}/>
+          <Route exact path='/forgot' component={ForgotPassword}/>
+          <Route exact path='/callback' component={Callback}/>
+          <Route exact path='/home' component={RequireAuth(Home)}/>
+          <Route exact path='/password' component={RequireAuth(ChangePassword)}/>
+        </Switch>
       </App>
     </BrowserRouter>
   </Provider>,

@@ -17,6 +17,7 @@ export default class Auth {
   constructor() {
     this.signin = this.signin.bind(this);
     this.signout = this.signout.bind(this);
+    this.checkSession = this.checkSession.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
   }
@@ -30,6 +31,18 @@ export default class Auth {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+  }
+
+  checkSession() {
+    return new Promise((resolve, reject) => {
+      this.auth0.checkSession({}, (err, authResult) => {
+        if (err) {
+          return reject(err)
+        }
+
+        return resolve(authResult);
+      })
+    });
   }
 
   handleAuthentication() {

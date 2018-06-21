@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../actions/auth';
 
 export default function(ComposedComponent) {
 
   class Authentication extends Component {
 
     componentWillMount() {
-      if (!this.props.authenticated) {
-        this.props.history.push("/");
-      }
+      this.props.checkUserSession((err, result) => {
+        if (err) {
+          return this.props.history.push('/');
+        }
+      });
     }
 
     componentWillUpdate(nextProps) {
@@ -26,5 +29,5 @@ export default function(ComposedComponent) {
     return { authenticated: state.auth.authenticated };
   }
 
-  return connect(mapStateToProps)(Authentication);
+  return connect(mapStateToProps, actions)(Authentication);
 }

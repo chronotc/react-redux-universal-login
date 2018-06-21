@@ -19,6 +19,29 @@ export function signinUser(callback) {
   }
 }
 
+export function checkUserSession(callback) {
+  return function (dispatch) {
+    auth.checkSession()
+      .then(() => {
+        dispatch({ type: AUTH_USER });
+        return callback();
+      })
+      .catch(err => {
+        dispatch({ type: UNAUTH_USER });
+        setTimeout(() => {
+          const timestamp = Date.now();
+          const error = `Error: ${err.error}, Error Description: ${err.errorDescription}`;
+          dispatch({
+            type: AUTH_ERROR,
+            error,
+            timestamp
+          }, 1000);
+        })
+        return callback(err);
+      });
+  }
+}
+
 export function authError(error) {
   const timestamp = Date.now();
   return {
