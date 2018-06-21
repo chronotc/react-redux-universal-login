@@ -12,16 +12,9 @@ class Signin extends Component {
     router: PropTypes.object
   };
 
-  componentWillMount() {
-    this.props.signoutUser();
-  }
-
   componentWillUpdate(nextProps, nextState) {
     const { error } = nextProps;
     if (error) {
-      this.container.error(`${error}`, "Signin Failed", {
-        timeOut: 3000, extendedTimeOut: 4000
-      });
       nextProps.cleardown();
     }
   }

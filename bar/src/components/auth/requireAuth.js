@@ -5,9 +5,16 @@ import * as actions from '../../actions/auth';
 export default function(ComposedComponent) {
 
   class Authentication extends Component {
+    constructor() {
+      super();
+      this.state = {
+        loading: true
+      }
+    }
 
     componentWillMount() {
       this.props.checkUserSession((err, result) => {
+        this.setState({ loading: false })
         if (err) {
           return this.props.history.push('/');
         }
@@ -21,6 +28,14 @@ export default function(ComposedComponent) {
     }
 
     render() {
+      if (this.state.loading) {
+        return (
+          <div>
+            Verifying...
+          </div>
+        );
+      }
+
       return <ComposedComponent {...this.props} />
     }
   }
