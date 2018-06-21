@@ -40,6 +40,7 @@ export default class Auth {
           return reject(err)
         }
 
+        this.setSession(authResult);
         return resolve(authResult);
       })
     });
